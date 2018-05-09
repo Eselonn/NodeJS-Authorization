@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const app = express();
 const database = require("./config/database.js");
+
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -10,24 +12,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-app.get("/login", (reg, res) =>{
-    res.render('pages/login');
-});
 
-app.get("/signUp", (reg, res) =>{
-    res.render('pages/signUp');
-})
-
-app.get("/", (req, res)=>{
-    res.render('pages/index');
-});
-
-app.post('/login', function(req, res) {
-    res.send('Login: ' + req.body.username + ' Password: '+ req.body.pswd);
-
-});
+require("./config/ruting.js")(app);
 
 app.listen(7325, ()=>{
     console.log("Starting server...")
     database.TestConnection();
+    database.SendQuery("SHOW DATABASES;")
 });
