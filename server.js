@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const app = express();
-
+const database = require("./config/database.js");
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -27,4 +27,7 @@ app.post('/login', function(req, res) {
 
 });
 
-app.listen(7325);
+app.listen(7325, ()=>{
+    console.log("Starting server...")
+    database.TestConnection();
+});

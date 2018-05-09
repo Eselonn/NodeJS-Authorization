@@ -2,8 +2,10 @@
     <head>
         <% include ../parts/head %>
         <style>
-        .tablePadding
-        {
+        .jumbotron{
+            
+        }
+        .tablePadding{
             padding:1%;
         }
         </style>
@@ -17,17 +19,25 @@
                 <div style="width:30%; margin:auto;">
                     <form method="post" acction="/login">
                         <table>
-                            <tr>
+                            <tr >
                                 <td>Login:</td>
                                 <td class="tablePadding"><input type="text" class="form-control" name="username"></td>
+                            </tr>
+                            <tr>
+                                <td>E-mail:</td>
+                                <td class="tablePadding"><input type="text" class="form-control" name="email"></td>
                             </tr>
                             <tr>
                                 <td> Password: </td>
                                 <td class="tablePadding"> <input type="password"class="form-control" name="pswd"> </td>
                             </tr>
                             <tr>
-                                <td> </td>
-                                <td style="float:right; margin:1%;"> <input type="submit" value="Login"> </td>
+                                <td> Re-Password: </td>
+                                <td class="tablePadding"> <input type="password"class="form-control" name="repswd"> </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="tablePadding" style="float:right; margin:1%;"> <input type="submit" value="Register">  </td>
                             </tr>
                         </table>
                     </form>
