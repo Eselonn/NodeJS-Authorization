@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <% include ../parts/head %>
+    </head>
+    <body>
+        <header>
+            <% include ../parts/header %>
+        </header>
+        <section>
+            <div class="jumbotron" >
+                <div style="width:30%; margin:auto;">
+                    <form method="post" acction="/login">
+                        <table>
+                            <tr>
+                                <td>Login:</td>
+                                <td><input type="text" class="form-control" name="username"></td>
+                            </tr>
+                            <tr>
+                                <td> Password: </td>
+                                <td> <input type="password"class="form-control" name="pswd"> </td>
+                            </tr>
+                            <tr>
+                                <td> <input type="submit"> </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>
